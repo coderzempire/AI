@@ -1,0 +1,109 @@
+# ===== Tumhare AI Assistant ki Settings =====
+# Yahan se sab kuch customize kar sakte ho
+
+assistant:
+  name: "Aria"              # 👈 Apna pasandida naam likho
+  gender: "female"
+  persona: "caring, sweet, loving, protective"
+  language_mode: "hinglish"   # hindi | english | hinglish
+
+# ===== Voice Options (6 Sweet Indian Female Voices) =====
+# Phase 2 me kaam aayega - abhi sirf choose karo
+voice:
+  current: "swara"            # 👈 Jo voice chahiye uska naam yahan likho
+  rate: "+0%"                 # speed: -20% se +20% tak
+  pitch: "+0Hz"               # awaaz patli/moti: -50Hz se +50Hz
+  volume: "+0%"
+
+# 👇 Ye 6 Indian Female Voices hain (edge-tts ke)
+available_voices:
+
+  - id: "swara"
+    name: "Swara"
+    code: "hi-IN-SwaraNeural"
+    style: "Sweet, natural Hindi female - sabse soft aur pyari"
+    best_for: "Roz ki baatein, caring tone"
+
+  - id: "ananya"
+    name: "Ananya"
+    code: "hi-IN-AnanyaNeural"
+    style: "Young, fresh Hindi female - modern ladki jaisi"
+    best_for: "Dosti, masti, casual baatein"
+
+  - id: "neerja"
+    name: "Neerja"
+    code: "en-IN-NeerjaNeural"
+    style: "Indian English female - professional + warm"
+    best_for: "English replies, formal help"
+
+  - id: "neerja_expressive"
+    name: "Neerja Expressive"
+    code: "en-IN-NeerjaExpressiveNeural"
+    style: "Emotional, expressive English female - feelings wali"
+    best_for: "Udaas mood, emotional support"
+
+  - id: "kavya"
+    name: "Kavya"
+    code: "hi-IN-KavyaNeural"      # (agar available ho to)
+    style: "Soft spoken Hindi female - maa jaisi mamta"
+    best_for: "Caring, protective replies"
+
+  - id: "aarohi"
+    name: "Aarohi"
+    code: "mr-IN-AarohiNeural"     # Marathi female, Hindi bhi bolti hai
+    style: "Melodious Indian female - gaane jaisi awaaz"
+    best_for: "Sweet good morning/night wishes"
+
+# ===== Image Options (6 Animated Indian Female Characters) =====
+# Phase 4 (UI) me kaam aayega
+avatar:
+  current: "aria_default"
+  options:
+    - id: "aria_default"
+      name: "Aria"
+      look: "Long black hair, big brown eyes, dupatta, warm smile"
+      style: "2D anime-style Indian girl"
+
+    - id: "meera"
+      name: "Meera"
+      look: "Short bob hair, glasses, kurti, cute dimples"
+      style: "3D Pixar-style Indian girl"
+
+    - id: "isha"
+      name: "Isha"
+      look: "Wavy hair, bindi, nose ring, traditional saree"
+      style: "Semi-realistic digital art"
+
+    - id: "riya"
+      name: "Riya"
+      look: "Ponytail, hoodie, jeans, modern college girl"
+      style: "Cartoon flat illustration"
+
+    - id: "tara"
+      name: "Tara"
+      look: "Long braid, maang tikka, lehenga, royal look"
+      style: "Indian folklore art style"
+
+    - id: "zoya"
+      name: "Zoya"
+      look: "Curly hair, kurti, silver jhumka, sparkling eyes"
+      style: "Anime + Bollywood mix"
+
+# ===== Memory Settings =====
+memory:
+  enabled: true
+  database: "data/memory.db"
+  remember_personal: true     # Tumhari personal baatein yaad rakhe
+
+# ===== LLM (Brain) Settings =====
+llm:
+  provider: "groq"            # groq | openai | ollama
+  model: "llama-3.1-70b-versatile"
+  temperature: 0.8
+  max_tokens: 1024
+
+# ===== Behavior =====
+behavior:
+  care_mode: true             # Tumhara khayal rakhe
+  sweet_tone: true            # Pyar se bole
+  remember_all: true          # Sab yaad rakhe
