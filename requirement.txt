@@ -1,0 +1,79 @@
+
+**💡 Ye kya hai:** Tumhare project ka **home page**. GitHub par repo kholte hi ye dikhega.
+
+---
+
+## 📄 FILE 5: `app/main.py`
+
+**📍 Kahan save karna hai:** Pehle `app` naam ka folder banao, uske andar  
+**📝 Naam:** `main.py`  
+**📂 Full path:** `app/main.py`
+
+```python
+"""
+🌸 Aria - Personal AI Assistant
+File: app/main.py
+Purpose: Main entry point - basic setup test
+Phase: 1 (Setup)
+"""
+
+import os
+import yaml
+from dotenv import load_dotenv
+
+# ===== Environment Load =====
+load_dotenv()
+
+# ===== Config Load =====
+def load_config():
+    """config.yaml padhkar return karta hai"""
+    with open("config.yaml", "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def show_welcome(config):
+    """Welcome message dikhata hai"""
+    name = config["assistant"]["name"]
+    gender = config["assistant"]["gender"]
+    persona = config["assistant"]["persona"]
+
+    print("=" * 50)
+    print(f"🌸 Namaste! Main {name} hoon 💖")
+    print(f"   Gender: {gender}")
+    print(f"   Persona: {persona}")
+    print("=" * 50)
+
+
+def show_voice_options(config):
+    """Saari voice options dikhata hai"""
+    print("\n🎵 Available Voices:")
+    for v in config["available_voices"]:
+        print(f"   • {v['name']:20} → {v['style']}")
+
+
+def show_avatar_options(config):
+    """Saare avatar options dikhata hai"""
+    print("\n🎨 Available Avatars:")
+    for a in config["avatar"]["options"]:
+        print(f"   • {a['name']:10} → {a['look']}")
+
+
+def main():
+    print("\n🚀 Starting Personal AI Assistant...\n")
+
+    # Config load
+    config = load_config()
+
+    # Welcome
+    show_welcome(config)
+
+    # Options dikhao
+    show_voice_options(config)
+    show_avatar_options(config)
+
+    print("\n✅ Phase 1 Setup Complete!")
+    print("💕 Agla step: 'agla step' likho\n")
+
+
+if __name__ == "__main__":
+    main()
